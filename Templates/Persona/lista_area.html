@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    
+{% endblock title %}
+
+
+{% block body %}
+
+    {% include 'Includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell"><h1>Empleado por Areas</h1></div>
+            <div class="cell">
+            <!-- Inicio Tabla -->
+            <div class="cell">
+                <table class="stack">
+                    <thead>
+                      <tr>
+                            <th width="100">ID</th>
+                            <th width="150">Nombre</th>
+                            <th width="150">Apellido</th>
+                            <th width="150">Nombre Completo</th>
+                            <th width="200">Departamento</th>
+                            <th width="150">Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for empleado in empleados  %}
+                        <tr>
+                            <td>{{empleado.id}}</td>
+                            <td>{{empleado.first_name}}</td>
+                            <td>{{empleado.last_name}}</td>
+                            <td>{{empleado.full_name}}</td>
+                            <td>{{empleado.departamento.name}}</td>
+                            <td><a class="clear button secondary" href="{% url 'persona_app:empleado_detail' empleado.id %}">Ver</a></td>
+                        </tr>
+                      {% endfor %} 
+                    </tbody>
+                  </table>
+            </div>
+            <!-- Fin Tabla -->
+            </div>
+        </div>
+    </div>
+    
+
+
+{% endblock body %}
+    
+<!-- {{object_list}} -->
+<h1>Lista de areas</h1>
+<ul>
+        
+    {% for area in empleados %}
+        <li>{{area}}</li>
+    {% endfor %}
+        
+
+</ul>

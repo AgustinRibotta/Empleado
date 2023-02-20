@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    lista Departamento
+{% endblock title %} 
+
+{% block body %}
+{% include 'Includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1>Registro Departamentos</h1>
+        <form class="cell callout grid-x grid-margin-x" method="POST">{% csrf_token %}
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <h3 class="cell">Datos empleado</h3>
+                    <div class="medium-12 cell">
+
+                        <label>Nombre
+                            {{form.nombre}}
+                        </label>
+                    </div>
+
+                    <div class="medium-12 cell">
+                        <label>Apellido
+                            {{form.apellido}}
+                        </label>
+
+                    </div>
+                    <div class="cell">
+                        <h3 class="medium-12 cell1">Datos Departamento</h3>
+                    </div>
+                    <div class="medium-12 cell ">
+                        <label>Departamento
+                            {{form.departamento}}
+                        </label>
+
+                    </div>
+                    <div class="medium-12 cell">
+                        <label>Siglas
+                            {{form.shorname}}
+                        </label>
+
+                    </div>
+                    <div class="medium-12 cell">
+                        <button class="button  type="submit">Cargar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+{% endblock body %}
+
+
+

@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>{% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+</head>
+<body> 
+    <!-- Fundation esta dividio por dose casillas -->
+    <h1> Prueba. </h1>
+
+    <div class= 'grid-x' style="border: 1px solid green;">
+
+        <h2 class="cell small-12 large-5" style="border: 1px solid red;" >Elmentos1</h2>
+        <h2 class="cell large-4">Elmentos2</h2>
+        <h2 class="cell large-3">Elmentos3</h2>
+
+    
+
+        <div class="grid-x cell large-4 ">
+
+            <h4 class="cell large-2">otro elmento 1</h4>
+            <h4 class="cell large-2">otro elmento 2</h4>
+            <h4>otro elmento 3</h4>
+
+        </div>
+
+    </div>
+</body>
+</html>
